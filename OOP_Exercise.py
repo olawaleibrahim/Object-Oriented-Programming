@@ -19,12 +19,24 @@ class House:
         self.length = length
         self.colour = colour
 
+    def repaint(self, new_colour):
+        
+        '''
+        Method to repaint the house
+        '''
+
+        self.colour = new_colour
+
+        return f"The house has been repainted to {self.colour}"
+
+
     def info(self):
 
         '''
         Method to describe house info
         '''
         return f"This house has dimensions {self.length} * {self.width} * {self.height} and is coloured {self.colour}"
+
 
 class Storey(House):
 
@@ -43,9 +55,11 @@ class Storey(House):
 
         assert isinstance(storeys, int), f'{storeys} should be an integer for number of storeys'
 
+    
     def extra_info(self):
 
         return f"This storey building has {self.rooms} rooms and {self.storeys}"
+
 
 class Bungalow(House):
 
@@ -81,14 +95,13 @@ if __name__ == "__main__":
     bungalow1 = Bungalow(height=200, width=1200, length=2000, colour='blue', rooms=22)
     storey1 = Storey(300, 500, 1200, 'green', 5, 2)
     
-    #print(house1)
-    #print(bungalow1)
-    #print(storey1)
     print(f"House1 previous colour is : {house1.colour}")
 
     #changing the colour of the house
     house1.colour = 'white'
     print(f"House1 new colour is : {house1.colour}")
+    print(house1.repaint('Black'))
+    print(house1.colour)
 
     print(bungalow1.colour)
     print(storey1.colour)
