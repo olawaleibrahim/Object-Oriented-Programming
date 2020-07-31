@@ -59,11 +59,11 @@ class Bungalow(House):
         The init constructor takes in the number of rooms in the bungalow
         '''
 
-        self.rooms = rooms
+        self.rooms_ = rooms
 
     def extra_info(self):
 
-        return f"This bungalow has {self.rooms} rooms"
+        return f"This bungalow has {self.rooms_} rooms"
 
 
 if __name__ == "__main__":
@@ -72,13 +72,17 @@ if __name__ == "__main__":
     bungalow1 = Bungalow(height=200, width=1200, length=2000, colour='blue', rooms=22)
     storey1 = Storey(300, 500, 1200, 'green', 5, 2)
     
-    print(house1)
-    print(bungalow1)
-    print(storey1)
-    print(house1.colour)
+    #print(house1)
+    #print(bungalow1)
+    #print(storey1)
+    print(f"House1 previous colour is : {house1.colour}")
+    house1.colour = 'white'
+    print(f"House1 new colour is : {house1.colour}")
     print(bungalow1.colour)
     print(storey1.colour)
     print(house1.info())
     print(bungalow1.info())
     print(storey1.info())
-    print(bungalow1.extra_info())
+    print(f"Before: {bungalow1.extra_info()}")
+    bungalow1.rooms = 34
+    print(f"After: {bungalow1.extra_info()}")
