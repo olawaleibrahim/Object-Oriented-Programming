@@ -65,6 +65,7 @@ class Bungalow(House):
 
         return f"This bungalow has {self.rooms_} rooms"
 
+#Function to print out the information of a building(house, bungalow, storey building)
 
 def see_info(building):
 
@@ -84,16 +85,26 @@ if __name__ == "__main__":
     #print(bungalow1)
     #print(storey1)
     print(f"House1 previous colour is : {house1.colour}")
+
+    #changing the colour of the house
     house1.colour = 'white'
     print(f"House1 new colour is : {house1.colour}")
+
     print(bungalow1.colour)
     print(storey1.colour)
+
     print(house1.info())
     print(bungalow1.info())
     print(storey1.info())
+
     print(f"Before: {bungalow1.extra_info()}")
+
+    #Trying the change the value of a private variable won't work
+    #Private variables are defined using an underscore or double
     bungalow1.rooms = 34
     print(f"After: {bungalow1.extra_info()}")
+
+    #Polymorphism example
 
     print(see_info(bungalow1))
     print(see_info(storey1))
