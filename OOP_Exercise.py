@@ -66,6 +66,14 @@ class Bungalow(House):
         return f"This bungalow has {self.rooms_} rooms"
 
 
+def see_info(building):
+
+    '''
+    Function to check the info of a building
+    '''
+
+    return building.extra_info()
+
 if __name__ == "__main__":
     
     house1 = House(height=200, width=1200, length=2000, colour='red')
@@ -86,3 +94,6 @@ if __name__ == "__main__":
     print(f"Before: {bungalow1.extra_info()}")
     bungalow1.rooms = 34
     print(f"After: {bungalow1.extra_info()}")
+
+    print(see_info(bungalow1))
+    print(see_info(storey1))
