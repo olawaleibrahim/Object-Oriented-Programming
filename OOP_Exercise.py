@@ -73,11 +73,11 @@ class Bungalow(House):
         The init constructor takes in the number of rooms in the bungalow
         '''
 
-        self.rooms_ = rooms
+        self._rooms = rooms
 
     def extra_info(self):
 
-        return f"This bungalow has {self.rooms_} rooms"
+        return f"This bungalow has {self._rooms} rooms"
 
 #Function to print out the information of a building(house, bungalow, storey building)
 
